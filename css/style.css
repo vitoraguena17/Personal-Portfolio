@@ -217,30 +217,34 @@ nav {
 
 /******************************* hero-page *************************************/
 /******************************* home-page *************************************/
+.hero {
+  margin: auto;
+}
+
 .home {
   display: flex;
   flex-direction: row;
-  margin: 11.5% 10%;
+  margin: 15% 10%;
+  margin-bottom: 8%;
 }
 
-.home-text {
-  margin: 5% 2%;
+.hero-text {
   text-align: justify;
   font-size: 1.3rem;
+  margin: 5%;
 }
 
-.home-title {
+.title {
   font-size: 3rem;
   font-weight: 900;
   opacity: 0.7;
 }
 
-.home-subtitle {
-  margin: 10px 0;
+.subtitle {
   opacity: 0.7;
 }
 
-.home-description {
+.description {
   opacity: 0.8;
 }
 
@@ -328,37 +332,9 @@ nav {
   width: 170px;
 }
 
-.home-more {
-  display: flex;
-  flex-direction: row;
-  padding: 10px 40px;
-  transition: 0.5s;
-  font-size: 1.2rem;
-  font-weight: 600;
-}
-
-.home-btn-more {
-  color: var(--color-secondary);
-  
-
-  .dark-mode & {
-    color: var(--fourth-color);
-  }
-}
-
 .fa-arrow-down {
   font-size: 1rem;
   transition: .5s;
-}
-
-.home-more:hover {
-  .home-btn-more {
-    position: fixed;
-  }
-
-  .fa-arrow-down {
-    transform: translateY(.5rem);
-  }
 }
 
 @media (max-width: 1200px) {
@@ -372,11 +348,6 @@ nav {
     width: 170px;
   }
 
-  .home-btn {
-    display: flex;
-    justify-content: center;
-  }
-
   .home-links {
     flex-direction: row;
     letter-spacing: 1rem;
@@ -384,10 +355,107 @@ nav {
     margin: 0 auto;
   }
 
-  .home-more {
-    display: none;
-
+  .home-contact {
+    text-align: center;
   }
 }
 
 /******************************* FIM home-page *************************************/
+
+
+/******************************* about-page *************************************/
+
+.about {
+  justify-content: center;
+  align-items: center;
+  margin: 8% 15% 5% 15%;
+}
+
+.about-header {
+  text-align: center;
+  margin: 5%;
+  font-size: 1.5rem;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+}
+
+.description-about {
+  display: grid;
+  margin: 0 10% 0px 10%;
+  text-align: justify;
+  font-size: 1.3rem;
+}
+
+.about-img {
+  width: 271px;
+  height: 500px;
+  border-radius: 20px;
+}
+
+.cards {
+  font-size: 3.5rem;
+  letter-spacing: 2.5rem;
+  text-align: center;
+  color: var(--color-secondary);
+}
+
+.dark-mode .cards {
+  color: var(--fourth-color);
+}
+
+.card-icon {
+  transition: 0.5s;
+  border-radius: 50%;
+}
+
+.card-icon:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+.about-cv {
+  text-align: center;
+  margin: 50px 0;
+}
+
+.cv-btn {
+  border: 2px solid var(--header-color);
+  padding: 10px 30px;
+  border-radius: 10px;
+  color: var(--color-secondary);
+  font-weight: 700;
+  transition: 0.5s;
+
+  .dark-mode & {
+    border: 2px solid var(--fourth-color);
+    color: var(--fourth-color);
+  }
+}
+
+.cv-btn:hover {
+  background-color: var(--fourth-color);
+  color: var(--header-color);
+
+  .dark-mode & {
+    color: var(--header-color);
+  }
+}
+
+@media (max-width: 1200px) {
+  .content {
+    display: flex;
+    flex-direction:column;
+  }
+  .about-img{
+    width: 170px;
+    height: 250px;
+  }
+
+  .cards {
+    display: none;
+  }
+}
