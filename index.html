@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Personal Portfolio</title>
+
+  <!-- linkando CSS -->
+  <link rel="stylesheet" href="./css/style.css" />
+
+  <!-- Linkando Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+
+  <!-- font awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body>
+  <header>
+    <nav id="nav">
+      <h1 class="header-title">VITOR <span class="title-span">AGUENA</span></h1>
+      <div class="mobile-menu">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+      </div>
+      <ul class="nav-list">
+        <li><a href="#">Sobre</a></li>
+        <li><a href="#">Habilidades</a></li>
+        <li><a href="#">Projetos</a></li>
+        <li><a href="#">Experiência Profissional</a></li>
+        <li><a href="#">Contato</a></li>
+      </ul>
+      <div>
+        <input type="checkbox" class="header-chk" id="chk">
+        <label class="header-label" for="chk">
+          <i class="fa-solid fa-moon"></i>
+          <i class="fa-solid fa-sun"></i>
+          <div class="header-ball"></div>
+        </label>
+      </div>
+    </nav>
+  </header>
+  <main class="hero">
+    <div class="home">
+      <div class="home-text">
+        <h1 class="home-title">Olá, eu sou o Vitor </h1>
+        <h3 class="home-subtitle">Desenvolvedor e Analista de Sistemas</h3>
+        <p class="home-description"> Entusiasta da Tecnologia da Informação com foco em Análise e Desenvolvimento de
+          Sistemas, apaixonado por
+          Hardware e aprendendo constantemente sobre programação</p>
+      </div>
+      <div class="home-img">
+        <svg class="gallery" viewBox="0 0 200 187" xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink">
+          <mask id="mask0" mask-type="alpha">
+            <path d="M190.312 36.4879C206.582 62.1187 201.309 102.826 182.328 134.186C163.346 165.547 
+              130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403 129.362C2.45775 
+              97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 -0.149132 97.9666 
+              0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z" />
+          </mask>
+          <g mask="url(#mask0)">
+            <path d="M190.312 36.4879C206.582 62.1187 201.309 102.826 182.328 134.186C163.346 
+              165.547 130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403 
+              129.362C2.45775 97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 
+              -0.149132 97.9666 0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z" />
+            <image class="hero-img" href="image/eu.png" x='8' />
+          </g>
+        </svg>
+      </div>
+    </div>
+  </main>
+  <script src="./js/script.js"></script>
+</body>
+
+</html>
