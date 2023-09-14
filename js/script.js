@@ -10,9 +10,9 @@ class MobileNavbar {
 
   animateLinks() {
     this.navLinks.forEach((link, index) => {
-      link.style.animation
-        ? (link.style.animation = "")
-        : (link.style.animation = `navLinkFade 0.5s ease forwards ${
+      link.style.animation ?
+        (link.style.animation = "") :
+        (link.style.animation = `navLinkFade 0.5s ease forwards ${
             index / 7 + 0.3
           }s`);
     });
@@ -44,9 +44,9 @@ const mobileNavbar = new MobileNavbar(
 mobileNavbar.init();
 
 
-const chk = document.getElementById('chk')
+const $html = document.querySelector('html')
+const $checkbox = document.querySelector('#chk')
 
-chk.addEventListener('change', ()=> {
-    document.body.classList.toggle('dark')
+$checkbox.addEventListener('change', function () {
+  $html.classList.toggle('dark-mode')
 })
-

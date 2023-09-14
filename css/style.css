@@ -5,7 +5,7 @@
 }
 
 :root {
-  --color-primary: #000035;
+  --header-color: #000035;
   --color-secondary: #062863;
   --color-tertiary: #1c4c96;
   --fourth-color: #607ec9;
@@ -16,12 +16,13 @@
 body {
   font-family: 'Poppins', sans-serif;
   transition: background .5s linear;
+
+  .dark-mode & {
+    background-color: #000020;
+    color: var(--white);
+  }
 }
 
-body.dark {
-  background-color: #000020;
-  color: var(--white);
-}
 
 ul,
 ol {
@@ -38,6 +39,16 @@ html {
 }
 
 /******************************* header-page *************************************/
+.header-page {
+  position: fixed;
+  top: 0;
+  /* Fixa o cabeçalho no topo da página */
+  width: 100%;
+  /* Faz o cabeçalho ocupar toda a largura da página */
+  background: var(--header-color);
+  z-index: 100;
+}
+
 
 .header-title {
   font-size: 24px;
@@ -68,6 +79,7 @@ nav {
 .nav-list a {
   color: var(--white);
   transition: .5s;
+  font-size: 1.1rem;
 }
 
 .nav-list a:hover {
@@ -203,16 +215,16 @@ nav {
 /******************************* FIM header-page *************************************/
 
 
-/******************************* HERO *************************************/
-
+/******************************* hero-page *************************************/
+/******************************* home-page *************************************/
 .home {
   display: flex;
   flex-direction: row;
-  margin: 12% 10%;
+  margin: 11.5% 10%;
 }
 
 .home-text {
-  margin: auto 2%;
+  margin: 5% 2%;
   text-align: justify;
   font-size: 1.3rem;
 }
@@ -229,7 +241,7 @@ nav {
 }
 
 .home-description {
-  opacity: 0.7;
+  opacity: 0.8;
 }
 
 .home-contact {
@@ -237,17 +249,26 @@ nav {
 }
 
 .home-btn {
-  border: 2px solid var(--color-primary);
+  border: 2px solid var(--header-color);
   padding: 10px 30px;
   border-radius: 10px;
   color: var(--color-secondary);
   font-weight: 700;
   transition: 0.5s;
+
+  .dark-mode & {
+    border: 2px solid var(--fourth-color);
+    color: var(--fourth-color);
+  }
 }
 
 .home-btn:hover {
-  background-color: var(--color-secondary);
-  color: var(--fifth-color);
+  background-color: var(--fourth-color);
+  color: var(--header-color);
+
+  .dark-mode & {
+    color: var(--header-color);
+  }
 }
 
 .home-links {
@@ -261,13 +282,21 @@ nav {
   margin-bottom: 100%;
   color: var(--color-secondary);
   transition: .5s;
+
+  .dark-mode & {
+    color: var(--fourth-color);
+  }
 }
 
 .fa-github:hover {
   color: #171515;
+
+  .dark-mode & {
+    color: var(--white);
+  }
 }
 
-.fa-linkedin:hover{
+.fa-linkedin:hover {
   color: #0A66C2;
 }
 
@@ -287,11 +316,49 @@ nav {
 .gallery {
   width: 500px;
   fill: var(--fourth-color);
-  margin-left: 8%;
+  margin-left: 10%;
+  transition: .5s;
+}
+
+.gallery:hover {
+  scale: 1.02;
 }
 
 .hero-img {
   width: 170px;
+}
+
+.home-more {
+  display: flex;
+  flex-direction: row;
+  padding: 10px 40px;
+  transition: 0.5s;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.home-btn-more {
+  color: var(--color-secondary);
+  
+
+  .dark-mode & {
+    color: var(--fourth-color);
+  }
+}
+
+.fa-arrow-down {
+  font-size: 1rem;
+  transition: .5s;
+}
+
+.home-more:hover {
+  .home-btn-more {
+    position: fixed;
+  }
+
+  .fa-arrow-down {
+    transform: translateY(.5rem);
+  }
 }
 
 @media (max-width: 1200px) {
@@ -300,8 +367,27 @@ nav {
   }
 
   .gallery {
-    margin: 0 auto;
-    margin-left: 20%;
+    margin: 5% auto;
+    margin-left: 20vw;
     width: 170px;
   }
+
+  .home-btn {
+    display: flex;
+    justify-content: center;
+  }
+
+  .home-links {
+    flex-direction: row;
+    letter-spacing: 1rem;
+    justify-content: center;
+    margin: 0 auto;
+  }
+
+  .home-more {
+    display: none;
+
+  }
 }
+
+/******************************* FIM home-page *************************************/
