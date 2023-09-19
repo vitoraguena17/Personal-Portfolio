@@ -39,49 +39,6 @@ html {
 
 /******************************* header-page *************************************/
 
-.header-title {
-  font-size: 24px;
-  letter-spacing: 4px;
-  color: var(--white);
-  cursor: pointer;
-  transition: 0.5s;
-}
-
-.header-title:hover {
-  transform: scale(1.1);
-}
-
-.header-menu {
-  display: flex;
-  margin-left: 5%;
-}
-
-.menu-chk {
-  margin-right: 5%;
-}
-
-.title-span {
-  color: var(--fourth-color);
-}
-
-.logo {
-  font-size: 24px;
-  text-transform: uppercase;
-  letter-spacing: 4px;
-}
-
-.nav-header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: var(--header-color);
-  height: 8vh;
-  z-index: 1;
-}
-
 #sobre {
   scroll-margin-top: 15vh;
 }
@@ -96,6 +53,50 @@ html {
 
 #contato {
   scroll-margin-top: 15vh;
+}
+
+.header-menu {
+  display: flex;
+  margin: 0 5%;
+}
+
+.header-title {
+  font-size: 24px;
+  letter-spacing: 4px;
+  color: var(--white);
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.header-title:hover {
+  transform: scale(1.1);
+}
+
+.title-span {
+  color: var(--fourth-color);
+}
+
+.header-title-mobile {
+  font-size: 24px;
+  letter-spacing: 4px;
+  color: var(--white);
+  display: none;
+}
+
+.title-span-mobile {
+  color: var(--fourth-color);
+}
+
+.nav-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: var(--header-color);
+  height: 8vh;
+  z-index: 1;
 }
 
 .nav-list a {
@@ -121,6 +122,7 @@ html {
 .mobile-menu {
   display: none;
   cursor: pointer;
+  margin-left: 25vw;
 }
 
 .mobile-menu div {
@@ -134,6 +136,14 @@ html {
 @media (max-width: 1080px) {
   .header-menu {
     z-index: 1;
+  }
+
+  .header-title {
+    display: none;
+  }
+
+  .header-title-mobile {
+    display: block;
   }
 
   .nav-list {
@@ -235,19 +245,11 @@ html {
 
 /******************************* FIM header-page *************************************/
 
-/******************************* hero-page *************************************/
-
-.hero {
-  margin: auto;
-  margin-top: 8vh;
-}
-
 /******************************* home-page *************************************/
 .home {
   display: flex;
   flex-direction: row;
-  margin: 13% 15% 8% 10%;
-  min-height: 100vh;
+  margin: 15% 10%;
 }
 
 .hero-text {
@@ -344,7 +346,6 @@ html {
 .gallery {
   width: 500px;
   fill: var(--fourth-color);
-  margin-left: 10%;
   transition: 0.5s;
 }
 
@@ -355,8 +356,7 @@ html {
 .hero-img {
   width: 170px;
 }
-
-/******************************* scroll-effect *************************************/
+/******************************* scroll-button *************************************/
 
 .scrolldown {
   position: absolute;
@@ -454,8 +454,8 @@ html {
 .about-container {
   display: flex;
   flex-direction: column;
-  margin: 10% 10%;
-  min-height: 100vh;
+  margin: 12%;
+  margin-top: 0;
 }
 
 .about-header {
@@ -478,7 +478,7 @@ html {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  margin-bottom: 2%;
+  margin: 5% 0;
 }
 
 .description-about {
@@ -488,11 +488,11 @@ html {
 }
 
 .about-text {
-  margin: 11.5% 0;
+  margin: 35px 0;
 }
 
 .about-img {
-  width: 725px;
+  width: 600px;
   border-radius: 20px;
   margin-top: 7%;
 }
@@ -566,8 +566,8 @@ html {
 /******************************* skills-page *************************************/
 
 .skills-container {
-  margin: 10% 15% 10% 15%;
-  min-height: 100vh;
+  margin: 10%;
+  margin-top: 0;
 }
 
 .skills-container li {
@@ -576,7 +576,7 @@ html {
 
 .box-content {
   display: flex;
-  margin: auto;
+  justify-content: center;
 }
 
 .skills-title {
@@ -691,13 +691,14 @@ html {
     margin: 10% auto;
   }
 }
+
 /******************************* FIM skills-page *************************************/
 
 /******************************* project-page *************************************/
 
 .projects-container {
-  margin: 10% 15% 10% 15%;
-  min-height: 100vh;
+  margin: 15%;
+  margin-top: 0;
 }
 
 .project-title {
@@ -823,8 +824,8 @@ html {
 
 /******************************* carrer-page *************************************/
 .carrer-container {
-  margin: 13% 15% 0 10%;
-  min-height: 100vh;
+  margin: 10%;
+  margin-top: 0;
 }
 
 .carrer-title {
@@ -838,14 +839,15 @@ html {
 }
 
 /******************************* contact-page *************************************/
+.contact-container {
+  margin: 15%;
+  margin-top: 0;
+  margin-bottom: 10%;
+}
+
 .contact-form {
   width: 98%;
   max-width: 98%;
-}
-
-.contact-container {
-  margin: 13% 15% 0 15%;
-  min-height: 100vh;
 }
 
 .contact-title {
@@ -937,6 +939,38 @@ html {
 
 /******************************* FIM hero-page *************************************/
 
+.up-button {
+  position: fixed;
+  right: 2rem;
+  bottom: 2rem;
+  background-color: var(--fourth-color);
+  opacity: .8;
+  padding: 10px;
+  border-radius: .4rem;
+  transition: .5s;
+}
+
+.up-button:hover {
+  transform: scale(1.1);
+}
+
+.up-button-icon {
+  font-size: 1.5rem;
+  color: var(--white);
+}
+
+@media (max-width: 1080px) {
+  .up-button {
+    padding: 5px;
+    right: 0.5rem;
+    bottom: 0.5rem;
+  }
+
+  .up-button-icon {
+    font-size: 1.2rem;
+  }
+}
+
 /******************************* FOOTER *************************************/
 .footer {
   width: 100%;
@@ -1003,13 +1037,15 @@ html {
 }
 
 @media (max-width: 1000px) {
-  .footer-bottom {
-    flex-direction: column;
-    gap: 5px;
-  }
 
   .footer {
     height: 140px;
+    margin-top: 10%;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 5px;
   }
 }
 
