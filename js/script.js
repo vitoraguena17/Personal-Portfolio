@@ -1,3 +1,4 @@
+//*******************************************MOBILE_MENU************************************************\\
 class MobileNavbar {
   constructor(mobileMenu, navList, navLinks) {
     this.mobileMenu = document.querySelector(mobileMenu);
@@ -43,6 +44,7 @@ const mobileNavbar = new MobileNavbar(
 );
 mobileNavbar.init();
 
+//*******************************************DARK_MODE_BTN************************************************\\
 
 const $html = document.querySelector('html')
 const $checkbox = document.querySelector('#chk')
@@ -50,3 +52,20 @@ const $checkbox = document.querySelector('#chk')
 $checkbox.addEventListener('change', function () {
   $html.classList.toggle('dark-mode')
 })
+
+
+//*******************************************SCROLL_EFFECT************************************************\\
+
+const myObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry)=>{
+    if(entry.isIntersecting){
+    entry.target.classList.add('show')
+  }else {
+    entry.target.classList.remove('show')
+  }
+  })
+})
+
+const elements = document.querySelectorAll('.hidden')
+
+elements.forEach((element) => myObserver.observe(element))

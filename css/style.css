@@ -14,15 +14,14 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
-  transition: background .5s linear;
+  font-family: "Poppins", sans-serif;
+  transition: background 0.5s linear;
 
   .dark-mode & {
     background-color: #000020;
     color: var(--white);
   }
 }
-
 
 ul,
 ol {
@@ -39,22 +38,26 @@ html {
 }
 
 /******************************* header-page *************************************/
-.header-page {
-  position: fixed;
-  top: 0;
-  /* Fixa o cabeçalho no topo da página */
-  width: 100%;
-  /* Faz o cabeçalho ocupar toda a largura da página */
-  background: var(--header-color);
-  z-index: 100;
-}
-
 
 .header-title {
   font-size: 24px;
   letter-spacing: 4px;
   color: var(--white);
-  cursor: default;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.header-title:hover {
+  transform: scale(1.1);
+}
+
+.header-menu {
+  display: flex;
+  margin-left: 5%;
+}
+
+.menu-chk {
+  margin-right: 5%;
 }
 
 .title-span {
@@ -67,18 +70,37 @@ html {
   letter-spacing: 4px;
 }
 
-nav {
+.nav-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
-  background: var(--color-primary);
+  background: var(--header-color);
   height: 8vh;
+  z-index: 1;
+}
+
+#sobre {
+  scroll-margin-top: 15vh;
+}
+
+#skills {
+  scroll-margin-top: 15vh;
+}
+
+#projetos {
+  scroll-margin-top: 10vh;
+}
+
+#contato {
+  scroll-margin-top: 15vh;
 }
 
 .nav-list a {
   color: var(--white);
-  transition: .5s;
+  transition: 0.5s;
   font-size: 1.1rem;
 }
 
@@ -110,24 +132,23 @@ nav {
 }
 
 @media (max-width: 1080px) {
-  body {
-    overflow-x: hidden;
+  .header-menu {
+    z-index: 1;
   }
 
   .nav-list {
     position: absolute;
     top: 8vh;
     right: 0;
-    width: 50vw;
-    height: 92vh;
-    background: var(--color-primary);
+    width: 100%;
+    height: 100vh;
+    background: var(--header-color);
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
-    transform: translateX(100%);
+    justify-content: space-between;
+    transform: translateY(-100%);
     transition: transform 0.3s ease-in;
-    z-index: 1;
-    /*diz qual esta sobrepondo*/
+    text-transform: uppercase;
   }
 
   .nav-list li {
@@ -141,7 +162,7 @@ nav {
 }
 
 .nav-list.active {
-  transform: translateX(0);
+  transform: translateY(0);
 }
 
 @keyframes navLinkFade {
@@ -168,7 +189,7 @@ nav {
   transform: rotate(45deg) translate(-5px, -7px);
 }
 
-/******************************* header-page *************************************/
+/******************************* dark-mode *************************************/
 .header-chk {
   opacity: 0;
   position: absolute;
@@ -214,18 +235,19 @@ nav {
 
 /******************************* FIM header-page *************************************/
 
-
 /******************************* hero-page *************************************/
-/******************************* home-page *************************************/
+
 .hero {
   margin: auto;
+  margin-top: 8vh;
 }
 
+/******************************* home-page *************************************/
 .home {
   display: flex;
   flex-direction: row;
-  margin: 15% 10%;
-  margin-bottom: 8%;
+  margin: 13% 15% 8% 10%;
+  min-height: 100vh;
 }
 
 .hero-text {
@@ -234,17 +256,19 @@ nav {
   margin: 5%;
 }
 
-.title {
+.home-title {
   font-size: 3rem;
   font-weight: 900;
   opacity: 0.7;
+  margin-bottom: 30px;
 }
 
-.subtitle {
+.home-subtitle {
   opacity: 0.7;
+  margin-bottom: 15px;
 }
 
-.description {
+.home-description {
   opacity: 0.8;
 }
 
@@ -267,10 +291,11 @@ nav {
 }
 
 .home-btn:hover {
-  background-color: var(--fourth-color);
-  color: var(--header-color);
+  background-color: var(--header-color);
+  color: var(--fifth-color);
 
   .dark-mode & {
+    background-color: var(--fourth-color);
     color: var(--header-color);
   }
 }
@@ -285,7 +310,7 @@ nav {
 .fa-brands {
   margin-bottom: 100%;
   color: var(--color-secondary);
-  transition: .5s;
+  transition: 0.5s;
 
   .dark-mode & {
     color: var(--fourth-color);
@@ -301,16 +326,15 @@ nav {
 }
 
 .fa-linkedin:hover {
-  color: #0A66C2;
+  color: #0a66c2;
 }
 
 .fa-whatsapp:hover {
   color: #25d366;
 }
 
-
 .fa-instagram:hover {
-  color: #E1306C;
+  color: #e1306c;
 }
 
 .fa-brands:hover {
@@ -321,7 +345,7 @@ nav {
   width: 500px;
   fill: var(--fourth-color);
   margin-left: 10%;
-  transition: .5s;
+  transition: 0.5s;
 }
 
 .gallery:hover {
@@ -332,12 +356,72 @@ nav {
   width: 170px;
 }
 
-.fa-arrow-down {
-  font-size: 1rem;
-  transition: .5s;
+/******************************* scroll-effect *************************************/
+
+.scrolldown {
+  position: absolute;
+  top: 70vh;
+  left: 50%;
+  width: 40px;
+  height: 40px;
+  transform: translateY(-80px) translateX(-50%) rotate(45deg);
 }
 
-@media (max-width: 1200px) {
+.scrolldown span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-bottom: 2px solid var(--header-color);
+  border-right: 2px solid var(--header-color);
+  animation: animate 1.5s linear infinite;
+  opacity: 0;
+
+  .dark-mode & {
+    border-bottom: 2px solid var(--fourth-color);
+    border-right: 2px solid var(--fourth-color);
+  }
+}
+
+.scrolldown span:nth-child(1) {
+  transform: translate(-15px, -15px);
+  animation-delay: -0.4s;
+}
+
+.scrolldown span:nth-child(2) {
+  transform: translate(0, 0);
+  animation-delay: -0.2s;
+}
+
+.scrolldown span:nth-child(3) {
+  transform: translate(15px, 15px);
+  animation-delay: -0s;
+}
+
+@keyframes animate {
+  0% {
+    top: -5px;
+    left: -5px;
+    opacity: 0;
+  }
+
+  25% {
+    top: 0;
+    left: 0;
+    opacity: 1;
+  }
+
+  50%,
+  100% {
+    top: 5px;
+    left: 5px;
+    opacity: 0;
+  }
+}
+
+@media (max-width: 1080px) {
   .home {
     flex-direction: column-reverse;
   }
@@ -348,6 +432,10 @@ nav {
     width: 170px;
   }
 
+  .home-contact {
+    text-align: center;
+  }
+
   .home-links {
     flex-direction: row;
     letter-spacing: 1rem;
@@ -355,51 +443,64 @@ nav {
     margin: 0 auto;
   }
 
-  .home-contact {
-    text-align: center;
+  .scrolldown {
+    display: none;
   }
 }
 
 /******************************* FIM home-page *************************************/
 
-
 /******************************* about-page *************************************/
-
-.about {
-  justify-content: center;
-  align-items: center;
-  margin: 8% 15% 5% 15%;
+.about-container {
+  display: flex;
+  flex-direction: column;
+  margin: 10% 10%;
+  min-height: 100vh;
 }
 
 .about-header {
   text-align: center;
-  margin: 5%;
+  margin: 0 5%;
   font-size: 1.5rem;
 }
 
-.content {
+.about-title {
+  font-size: 3rem;
+  font-weight: 900;
+  opacity: 0.7;
+}
+
+.about-subtitle {
+  opacity: 0.7;
+}
+
+.about-content {
   display: flex;
   flex-direction: row;
-  text-align: center;
+  justify-content: space-around;
+  margin-bottom: 2%;
 }
 
 .description-about {
-  display: grid;
-  margin: 0 10% 0px 10%;
+  margin: 0 5% 0 5%;
   text-align: justify;
   font-size: 1.3rem;
 }
 
+.about-text {
+  margin: 11.5% 0;
+}
+
 .about-img {
-  width: 271px;
-  height: 500px;
+  width: 725px;
   border-radius: 20px;
+  margin-top: 7%;
 }
 
 .cards {
-  font-size: 3.5rem;
-  letter-spacing: 2.5rem;
-  text-align: center;
+  display: flex;
+  font-size: 3rem;
+  justify-content: space-around;
   color: var(--color-secondary);
 }
 
@@ -408,27 +509,22 @@ nav {
 }
 
 .card-icon {
-  transition: 0.5s;
   border-radius: 50%;
 }
 
-.card-icon:hover {
-  cursor: pointer;
-  transform: scale(1.2);
-}
-
 .about-cv {
-  text-align: center;
   margin: 50px 0;
+  text-align: center;
 }
 
 .cv-btn {
   border: 2px solid var(--header-color);
-  padding: 10px 30px;
+  padding: 20px 40px;
   border-radius: 10px;
   color: var(--color-secondary);
   font-weight: 700;
   transition: 0.5s;
+  font-size: 1.2rem;
 
   .dark-mode & {
     border: 2px solid var(--fourth-color);
@@ -437,25 +533,498 @@ nav {
 }
 
 .cv-btn:hover {
-  background-color: var(--fourth-color);
-  color: var(--header-color);
+  background-color: var(--header-color);
+  color: var(--fifth-color);
 
   .dark-mode & {
+    background-color: var(--fourth-color);
     color: var(--header-color);
   }
 }
 
-@media (max-width: 1200px) {
-  .content {
+@media (max-width: 1080px) {
+  .about-content {
     display: flex;
-    flex-direction:column;
-  }
-  .about-img{
-    width: 170px;
-    height: 250px;
+    flex-direction: column;
   }
 
   .cards {
     display: none;
   }
+
+  .gallery-about {
+    text-align: center;
+  }
+
+  .about-img {
+    width: 90%;
+  }
+}
+
+/******************************* FIM about-page *************************************/
+
+/******************************* skills-page *************************************/
+
+.skills-container {
+  margin: 10% 15% 10% 15%;
+  min-height: 100vh;
+}
+
+.skills-container li {
+  list-style: none;
+}
+
+.box-content {
+  display: flex;
+  margin: auto;
+}
+
+.skills-title {
+  font-size: 3rem;
+  font-weight: 900;
+  opacity: 0.7;
+}
+
+.skills-subtitle {
+  opacity: 0.7;
+}
+
+.skills-box {
+  width: 500px;
+  margin: 5%;
+  padding: 20px;
+  box-shadow: 0 14px 20px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  border-radius: 20px;
+  transition: .5s;
+
+  .dark-mode & {
+    background: var(--header-color);
+  }
+}
+
+.skills-box:hover {
+  transform: scale(1.05);
+}
+
+.skills-box li {
+  margin: 20px 0;
+  padding: 10px;
+}
+
+.skills-box-title {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.skills-box-text {
+  font-size: 1rem;
+  text-align: center;
+}
+
+.skill-bar {
+  background: #cccccc;
+  display: block;
+  height: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(0, 0, 0, 0.24);
+  transition: all 0.5s cubic-bezier(0.25, 0.5, 0.25, 1);
+}
+
+.skill-bar:hover {
+  box-shadow: 0 14x 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.skill-bar span {
+  height: 20px;
+  float: left;
+  background: var(--color-secondary);
+
+  .dark-mode & {
+    background: var(--fourth-color);
+  }
+}
+
+.montagem {
+  width: 70%;
+}
+
+.manutencao {
+  width: 55%;
+}
+
+.falhas {
+  width: 50%;
+}
+
+.pecas {
+  width: 45%;
+}
+
+.html {
+  width: 60%;
+}
+
+.css {
+  width: 50%;
+}
+
+.c {
+  width: 60%;
+}
+
+.java {
+  width: 20%;
+}
+
+@media (max-width: 990px) {
+  .skills-container {
+    margin: 40% auto;
+  }
+
+  .box-content {
+    display: block;
+  }
+
+  .skills-box {
+    width: 300px;
+    margin: 10% auto;
+  }
+}
+/******************************* FIM skills-page *************************************/
+
+/******************************* project-page *************************************/
+
+.projects-container {
+  margin: 10% 15% 10% 15%;
+  min-height: 100vh;
+}
+
+.project-title {
+  font-size: 3rem;
+  font-weight: 900;
+  opacity: 0.7;
+}
+
+.project-subtitle {
+  opacity: 0.7;
+}
+
+.project-text-title {
+  margin: 2% 0;
+}
+
+.project-text-title-span {
+  color: #dc143c;
+}
+
+.project-text-title-span-2 {
+  color: #102c57;
+
+  .dark-mode & {
+    color: var(--fourth-color);
+  }
+}
+
+.project-content {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  margin: 5% auto;
+}
+
+.project-content-1 {
+  display: flex;
+  flex-direction: row-reverse;
+  text-align: center;
+  margin: 5% auto;
+}
+
+.project-image {
+  width: 100%;
+  border-radius: 20px;
+  transition: .5s;
+}
+
+.project-image:hover {
+  transform: scale(1.1);
+}
+
+.project-text {
+  font-size: 1.2rem;
+  display: grid;
+  margin: auto;
+  text-align: justify;
+  margin-left: 5%;
+}
+
+.project-text-1 {
+  font-size: 1.2rem;
+  display: grid;
+  margin: auto;
+  text-align: justify;
+  margin-right: 5%;
+}
+
+
+.demo-btn {
+  margin: 10px auto;
+  border: 2px solid var(--header-color);
+  padding: 10px;
+  border-radius: 10px;
+  color: var(--header-color);
+  font-weight: 700;
+  transition: .5s;
+
+  .dark-mode & {
+    border: 2px solid var(--fourth-color);
+    color: var(--fourth-color);
+  }
+}
+
+.demo-btn:hover {
+  background-color: var(--header-color);
+  color: var(--fifth-color);
+
+  .dark-mode & {
+    background-color: var(--fourth-color);
+    color: var(--header-color);
+  }
+}
+
+@media (max-width: 1080px) {
+
+  .projects-container {
+    margin: 0 auto;
+  }
+
+  .project-content,
+  .project-content-1 {
+    flex-direction: column;
+    justify-content: center;
+    margin: 10%;
+  }
+
+  .project-image {
+    width: 80%;
+    margin: 30px;
+  }
+
+  .project-text {
+    margin: auto;
+  }
+
+  .project-text-1 {
+    margin: auto;
+  }
+}
+
+/******************************* FIM project-page *************************************/
+
+/******************************* carrer-page *************************************/
+.carrer-container {
+  margin: 13% 15% 0 10%;
+  min-height: 100vh;
+}
+
+.carrer-title {
+  font-size: 3rem;
+  font-weight: 900;
+  opacity: 0.7;
+}
+
+.carrer-subtitle {
+  opacity: 0.7;
+}
+
+/******************************* contact-page *************************************/
+.contact-form {
+  width: 98%;
+  max-width: 98%;
+}
+
+.contact-container {
+  margin: 13% 15% 0 15%;
+  min-height: 100vh;
+}
+
+.contact-title {
+  font-size: 3rem;
+  font-weight: 900;
+  opacity: 0.7;
+}
+
+.contact-form-label,
+.contact-form-input,
+.contact-form-textarea,
+.contact-form-button {
+  display: block;
+  font-family: "Poppins", sans-serif;
+}
+
+.contact-form-input,
+.contact-form-textarea,
+.contact-form-button {
+  width: 100%;
+  padding: 1.25rem;
+}
+
+.contact-form-input,
+.contact-form-textarea {
+  margin-bottom: 1rem;
+  color: var(--header-color);
+  background: #cccccc;
+  border: 0.125rem solid transparent;
+  border-radius: 1.125rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.contact-form-input:hover,
+.contact-form-input:focus,
+.contact-form-textarea:hover,
+.contact-form-textarea:focus {
+  outline: none;
+  border-color: var(--fourth-color);
+  box-shadow: 0 0 0 0.3125rem #cccccc;
+}
+
+.contact-form-label {
+  margin-bottom: 0.7rem;
+}
+
+.contact-form-textarea {
+  height: 18.2rem;
+  resize: none;
+}
+
+.contact-form-button {
+  border: 2px solid var(--header-color);
+  padding: 20px;
+  border-radius: 10px;
+  color: var(--color-secondary);
+  font-weight: 700;
+  transition: 0.5s;
+  font-size: 1.2rem;
+  background-color: var(--white);
+
+  .dark-mode & {
+    background-color: #000020;
+    border: 2px solid var(--fourth-color);
+    color: var(--fourth-color);
+  }
+}
+
+
+.contact-form-button:hover,
+.contact-form-button:focus {
+  background-color: var(--header-color);
+  color: var(--fifth-color);
+
+  .dark-mode & {
+    background-color: var(--fourth-color);
+    color: var(--header-color);
+  }
+}
+
+
+@media (max-width: 1000px) {
+  .contact-container {
+    margin: 0 10%;
+  }
+}
+
+/******************************* FIM contact-page *************************************/
+
+/******************************* FIM hero-page *************************************/
+
+/******************************* FOOTER *************************************/
+.footer {
+  width: 100%;
+  height: 115px;
+  background: var(--header-color);
+  transition: .5s;
+}
+
+.footer-icons {
+  display: flex;
+  justify-content: center;
+  font-size: 2.5rem;
+}
+
+.footer-icons a {
+  padding: 10px;
+  margin: 10px;
+  border-radius: 50%;
+}
+
+.uil {
+  color: var(--fourth-color);
+  transition: .5s;
+
+  .dark-mode & {
+    color: var(--white);
+  }
+}
+
+.uil-github:hover {
+  color: var(--white);
+
+  .dark-mode & {
+    color: #171515;
+  }
+}
+
+.uil-linkedin:hover {
+  color: #0a66c2;
+}
+
+.uil-whatsapp:hover {
+  color: #25d366;
+}
+
+.uil-instagram:hover {
+  color: #e1306c;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  color: var(--fourth-color);
+  background-color: var(--header-color);
+  padding: 10px;
+  gap: 30px;
+  font-size: 1.5rem;
+  transition: .5s;
+
+  .dark-mode & {
+    color: var(--white);
+  }
+}
+
+@media (max-width: 1000px) {
+  .footer-bottom {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .footer {
+    height: 140px;
+  }
+}
+
+/******************************* scroll-effect *************************************/
+
+.hidden {
+  opacity: 0;
+  filter: blur(10px);
+  transform: translateX(-100%);
+  transition: all 1.5s;
+}
+
+.show {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateX(0);
+  transition: all 1.5s;
 }

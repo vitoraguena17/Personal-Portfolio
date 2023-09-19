@@ -5,8 +5,8 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Personal Portfolio</title>
-
+  <title>Vitor Aguena</title>
+  <link rel="icon" href="./image/VA.ico">
   <!-- linkando CSS -->
   <link rel="stylesheet" href="./css/style.css" />
 
@@ -20,27 +20,32 @@
     integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+  <!-- font unicons -->
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+
 </head>
 
 <body>
   <header class="header-page">
-    <nav id="nav">
-      <a href="#top">
-        <h1 class="header-title">VITOR <span class="title-span">AGUENA</span></h1>
-      </a>
-      <div class="mobile-menu">
-        <div class="line1"></div>
-        <div class="line2"></div>
-        <div class="line3"></div>
+    <nav class="nav-header" id="nav">
+      <div class="header-menu">
+        <a href="#top">
+          <h1 class="header-title">VITOR <span class="title-span">AGUENA</span></h1>
+        </a>
+        <div class="mobile-menu">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
       </div>
       <ul class="nav-list">
         <li><a href="#sobre">Sobre</a></li>
-        <li><a href="#">Habilidades</a></li>
-        <li><a href="#">Projetos</a></li>
-        <li><a href="#">Carreira</a></li>
-        <li><a href="#">Contato</a></li>
+        <li><a href="#skills">Habilidades</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#carreira">Carreira</a></li>
+        <li><a href="#contato">Contato</a></li>
       </ul>
-      <div>
+      <div class="menu-chk">
         <input type="checkbox" class="header-chk" id="chk">
         <label class="header-label" for="chk">
           <i class="fa-solid fa-moon"></i>
@@ -50,9 +55,10 @@
       </div>
     </nav>
   </header>
+  <!-------------------------------------------------- HOME ----------------------------------------------->
   <main class="hero">
-    <div class="home">
-      <div class="home-links">
+    <div class="home hidden">
+      <div class="home-links hidden">
         <a href="https://github.com/vitoraguena17" target="_blank"><i class="fa-brands fa-github"></i></a>
         <a href="https://www.linkedin.com/in/vitor-matos-matsumoto-aguena-019179269/" target="_blank"><i
             class="fa-brands fa-linkedin"></i></a>
@@ -61,12 +67,19 @@
         <a href="https://www.instagram.com/vitor__aguena/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
       </div>
       <div class="hero-text">
-        <h1 class="title">Olá, eu sou o Vitor </h1>
-        <h3 class="subtitle">Desenvolvedor e Analista de Sistemas</h3>
-        <p class="description"> Entusiasta da Tecnologia da Informação com foco em Análise e Desenvolvimento de
+        <h1 class="-home-title">Olá, eu sou o Vitor </h1>
+        <h3 class="home-subtitle">Desenvolvedor e Analista de Sistemas</h3>
+        <p class="home-description"> Entusiasta da Tecnologia da Informação com foco em Análise e Desenvolvimento de
           Sistemas, apaixonado por
           Hardware e aprendendo constantemente sobre programação</p>
-        <div class="home-contact"><a href="" class="home-btn">Contate-me</a></div>
+        <div class="home-contact"><a href="#contato" class="home-btn">Contate-me</a></div>
+        <div class="scrolldown">
+          <a href="#sobre">
+            <span></span>
+            <span></span>
+            <span></span>
+          </a>
+        </div>
       </div>
       <div class="home-img">
         <svg class="gallery" viewBox="0 0 200 187" xmlns="http://www.w3.org/2000/svg"
@@ -85,21 +98,20 @@
             <image class="hero-img" href="image/eu.png" x='8' />
           </g>
         </svg>
-
       </div>
     </div>
-
-    <div class="about" id="sobre">
+    <!-------------------------------------------------- SOBRE ----------------------------------------------->
+    <div class="about-container hidden" id="sobre">
       <section class="about-header">
-        <h2 class="title">Sobre Mim</h2>
-        <h4 class="subtitle">Apresentação Pessoal</h4>
+        <h2 class="about-title">Sobre Mim</h2>
+        <h4 class="about-subtitle">Apresentação Pessoal</h4>
       </section>
-      <div class="content">
-        <figure>
+      <div class="about-content">
+        <figure class="gallery-about hidden">
           <img class="about-img" src="./image/eu_2.png" x='8' alt="Foto Pessoal">
         </figure>
         <div class="description-about">
-          <p>
+          <p class="about-text">
             Sou um estudante dedicado, atualmente cursando Análise e Desenvolvimento de Sistemas. Possuo sólidos
             conhecimentos na área de hardware de computador e estou comprometido com o estudo constante de programação
             tanto
@@ -107,15 +119,141 @@
             aprimoramento
             refletem meu compromisso em me destacar nesse campo.</p>
           <div class="cards">
-            <i class="fa-solid fa-graduation-cap card-icon"></i>
-            <i class="fa-solid fa-microchip card-icon"></i>
-            <i class="fa-solid fa-code card-icon"></i>
+            <i class="fa-solid fa-graduation-cap card-icon hidden"></i>
+            <i class="fa-solid fa-microchip card-icon hidden"></i>
+            <i class="fa-solid fa-code card-icon hidden"></i>
           </div>
-          <div class="about-cv"><a class="cv-btn" href="./docs/Currículo Vitor Aguena.pdf" download="" ><span>Baixe meu CV</span> <i class="fa-regular fa-circle-down"></i></a></div>
+        </div>
+      </div>
+      <div class="about-cv"><a class="cv-btn" href="./docs/Currículo Vitor Aguena.pdf" download=""
+          target="_blank"><span>Download
+            CV</span> <i class="fa-regular fa-circle-down"></i></a></div>
+    </div>
+    <!-------------------------------------------------- HABILIDADES ----------------------------------------------->
+    <div class="skills-container hidden" id="skills">
+      <section class="about-header">
+        <h2 class="skills-title">Habilidades</h2>
+        <h4 class="skills-subtitle">Meu nível técnico</h4>
+      </section>
+      <div class="box-content hidden">
+
+        <div class="skills-box">
+          <p class="skills-box-title">HARDWARE <i class="uil uil-desktop-cloud-alt"></i></p>
+          <p class="skills-box-text">Estudando sobre desde 2020, ampliando minhas habilidades práticas</p>
+          <li>
+            <p class="skills-content">Montagem</p>
+            <span class="skill-bar"><span class="montagem"></span></span>
+          </li>
+          <li>
+            <p class="skills-content">Manutenção</p>
+            <span class="skill-bar"><span class="manutencao"></span></span>
+          </li>
+          <li>
+            <p class="skills-content">Identificação de falhas</p>
+            <span class="skill-bar"><span class="falhas"></span></span>
+          </li>
+          <li>
+            <p class="skills-content">Diagnóstico de peças</p>
+            <span class="skill-bar"><span class="pecas"></span></span>
+          </li>
+        </div>
+
+        <div class="skills-box">
+          <p class="skills-box-title">SOFTWARE <i class="uil uil-brackets-curly"></i></p>
+          <p class="skills-box-text">Tendo contato prático e estudantil desde 2022</p>
+          <li>
+            <p class="skills-content">HTML</p>
+            <span class="skill-bar"><span class="html"></span></span>
+          </li>
+          <li>
+            <p class="skills-content">CSS</p>
+            <span class="skill-bar"><span class="css"></span></span>
+          </li>
+          <li>
+            <p class="skills-content">C++</p>
+            <span class="skill-bar"><span class="c"></span></span>
+          </li>
+          <li>
+            <p class="skills-content">JAVA SCRIPT</p>
+            <span class="skill-bar"><span class="java"></span></span>
+          </li>
         </div>
       </div>
     </div>
+    <!-------------------------------------------------- PROJETOS ----------------------------------------------->
+    <div class="projects-container hidden" id="projetos">
+      <section class="about-header">
+        <h2 class="project-title">Projetos em Destaque</h2>
+        <h4 class="project-subtitle">Meus trabalhos recentes</h4>
+      </section>
+      <div class="project-content">
+        <figure class="project-gallery hidden">
+          <img class="project-image" src="./image/PROJETO_XPTO.jpg" alt="PROJETO XPTO">
+        </figure>
+        <div class="project-text">
+          <h3 class="project-text-title">Projeto <span class="project-text-title-span">XPTO</span></h3>
+          <p>
+            Este projeto foi criado exclusivamente usando HTML e CSS, demonstrando a capacidade de desenvolver uma
+            interface web completa e interativa sem a necessidade de linguagens de programação mais avançadas. É um
+            exemplo de design elegante e funcional baseado apenas em tecnologias front-end simples.
+          </p>
+          <a class="demo-btn" href="https://vitoraguena17.github.io/XPTO" target="_blank">Demo <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="project-content-1">
+        <figure class="project-gallery hidden">
+          <img class="project-image" src="./image/SITE_DE_VIAJENS.jpg" alt="">
+        </figure>
+        <div class="project-text-1">
+          <h3 class="project-text-title">Site de <span class="project-text-title-span-2">Destinos</span></h3>
+          <p>Este projeto foi criado exclusivamente usando HTML e CSS, demonstrando a capacidade de desenvolver uma
+            interface web completa e interativa sem a necessidade de linguagens de programação mais avançadas. É um
+            exemplo de design elegante e funcional baseado apenas em tecnologias front-end simples.</p>
+          <a class="demo-btn" href="https://vitoraguena17.github.io/Destinos" target="_blank">Demo <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+    <!-------------------------------------------------- CARREIRA ----------------------------------------------->
+    <div class="carrer-container" id="carreira">
+      <section class="about-header hidden">
+        <h2 class="carrer-title">Carreira</h2>
+        <h3 class="carrer-subtitle">Minha trajetória estudantil</h3>
+      </section>
+    </div>
+    <!-------------------------------------------------- CONTATO ----------------------------------------------->
+    <div class="contact-container hidden" id="contato">
+      <section class="about-header">
+        <h2 class="contact-title">Contato</h2>
+      </section>
+      <form class="contact-form hidden" action="https://formsubmit.co/d7d5478dfa3667689d40423a890b5a23" method="POST">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_subject" value="New submission from Portifólio!">
+        <label class="contact-form-label" for="nome">Nome</label>
+        <input class="contact-form-input" type="text" name="nome" required />
+        <label class="contact-form-label" for="email">E-mail</label>
+        <input class="contact-form-input" type="email" name="email" required />
+        <label class="contact-form-label" for="mensagem">Mensagem</label>
+        <textarea class="contact-form-textarea" name="mensagem" required></textarea>
+        <button class="contact-form-button" type="submit" data-button>Enviar</button>
+      </form>
+    </div>
   </main>
+  <!-------------------------------------------------- RODAPE ----------------------------------------------->
+  <footer class="footer">
+    <div class="footer-icons">
+      <a href="https://github.com/vitoraguena17" target="_blank"><i class="uil uil-github"></i></a>
+      <a href="https://www.linkedin.com/in/vitor-matos-matsumoto-aguena-019179269/" target="_blank"><i
+          class="uil uil-linkedin"></i></a>
+      <a href="https://api.whatsapp.com/send?phone=+5511965265401&text=Ol%C3%A1%2C+vim+pelo+seu+Portfolio+%F0%9F%98%81%21"
+        target="_blank"><i class="uil uil-whatsapp"></i></a>
+      <a href="https://www.instagram.com/vitor__aguena/" target="_blank"><i class="uil uil-instagram"></i></a>
+    </div>
+    <div class="footer-bottom">
+      <p>Copyright &copy;2023</p>
+      <p>Desenvolvido por Vitor Aguena</p>
+    </div>
+  </footer>
+
   <script src="./js/script.js"></script>
 </body>
 
