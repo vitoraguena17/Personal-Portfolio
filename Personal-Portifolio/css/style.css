@@ -356,6 +356,7 @@ html {
 .hero-img {
   width: 170px;
 }
+
 /******************************* scroll-button *************************************/
 
 .scrolldown {
@@ -711,64 +712,50 @@ html {
   opacity: 0.7;
 }
 
-.project-text-title {
-  margin: 2% 0;
+.portifolio-content {
+  overflow: hidden;
+  margin-top: 5%;
 }
 
-.project-text-title-span {
+.portifolio-content-grid {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  padding: 8%;
+
+}
+
+.protifolio-img {
+  width: 350px;
+  border-radius: 20px;
+  transition: .5s;
+}
+
+.protifolio-img:hover {
+  transform: scale(1.05);
+}
+
+.protifolio-title {
+  font-size: 1.2rem;
+}
+
+.xpto-title {
   color: #dc143c;
 }
 
-.project-text-title-span-2 {
-  color: #102c57;
+.travels-title {
+  color: var(--color-secondary);
 
   .dark-mode & {
     color: var(--fourth-color);
   }
 }
 
-.project-content {
-  display: flex;
-  flex-direction: row;
-  text-align: center;
-  margin: 5% auto;
+.appletica {
+  color: #004AAD;
 }
 
-.project-content-1 {
-  display: flex;
-  flex-direction: row-reverse;
-  text-align: center;
-  margin: 5% auto;
-}
-
-.project-image {
-  width: 100%;
-  border-radius: 20px;
-  transition: .5s;
-}
-
-.project-image:hover {
-  transform: scale(1.1);
-}
-
-.project-text {
-  font-size: 1.2rem;
-  display: grid;
-  margin: auto;
-  text-align: justify;
-  margin-left: 5%;
-}
-
-.project-text-1 {
-  font-size: 1.2rem;
-  display: grid;
-  margin: auto;
-  text-align: justify;
-  margin-right: 5%;
-}
-
-
-.demo-btn {
+.button-demo {
   margin: 10px auto;
   border: 2px solid var(--header-color);
   padding: 10px;
@@ -783,7 +770,7 @@ html {
   }
 }
 
-.demo-btn:hover {
+.button-demo:hover {
   background-color: var(--header-color);
   color: var(--fifth-color);
 
@@ -794,49 +781,16 @@ html {
 }
 
 @media (max-width: 1080px) {
-
   .projects-container {
-    margin: 0 auto;
+    text-align: center;
   }
 
-  .project-content,
-  .project-content-1 {
-    flex-direction: column;
-    justify-content: center;
-    margin: 10%;
-  }
-
-  .project-image {
-    width: 80%;
-    margin: 30px;
-  }
-
-  .project-text {
-    margin: auto;
-  }
-
-  .project-text-1 {
-    margin: auto;
+  .portifolio-content-grid {
+    padding: 10%;
   }
 }
 
 /******************************* FIM project-page *************************************/
-
-/******************************* carrer-page *************************************/
-.carrer-container {
-  margin: 10%;
-  margin-top: 0;
-}
-
-.carrer-title {
-  font-size: 3rem;
-  font-weight: 900;
-  opacity: 0.7;
-}
-
-.carrer-subtitle {
-  opacity: 0.7;
-}
 
 /******************************* contact-page *************************************/
 .contact-container {
