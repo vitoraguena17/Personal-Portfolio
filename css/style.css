@@ -39,20 +39,10 @@ html {
 
 /******************************* header-page *************************************/
 
-#sobre {
-  scroll-margin-top: 15vh;
-}
-
-#skills {
-  scroll-margin-top: 15vh;
-}
-
-#projetos {
-  scroll-margin-top: 10vh;
-}
-
-#contato {
-  scroll-margin-top: 15vh;
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
 
 .header-menu {
@@ -87,55 +77,85 @@ html {
   color: var(--fourth-color);
 }
 
-.nav-header {
-  position: fixed;
-  top: 0;
-  width: 100%;
+.menu {
+  box-sizing: border-box;
   display: flex;
   justify-content: space-around;
   align-items: center;
   background: var(--header-color);
   height: 8vh;
-  z-index: 1;
 }
 
-.nav-list a {
-  color: var(--white);
-  transition: 0.5s;
-  font-size: 1.1rem;
-}
 
-.nav-list a:hover {
-  color: var(--fourth-color);
-}
-
-.nav-list {
+.menu-list {
   list-style: none;
   display: flex;
+  white-space: nowrap;
 }
 
-.nav-list li {
+.menu-list-btn {
+  text-decoration: none;
+  color: var(--white);
   letter-spacing: 3px;
-  margin-left: 32px;
+  margin-left: 10px;
+  padding: 1rem;
+  transition: all 0.5s;
 }
 
-.mobile-menu {
+.menu-mobile-btn {
   display: none;
   cursor: pointer;
-  margin-left: 25vw;
 }
 
-.mobile-menu div {
+.menu-mobile-btn div {
   width: 32px;
   height: 2px;
-  background: var(--white);
+  background-color: var(--white);
   margin: 8px;
   transition: 0.3s;
 }
 
-@media (max-width: 1080px) {
-  .header-menu {
-    z-index: 1;
+.menu.active .line1 {
+  transform: rotate(-45deg) translate(-8px, 8px);
+}
+
+.menu.active .line2 {
+  opacity: 0;
+}
+
+.menu.active .line3 {
+  transform: rotate(45deg) translate(-5px, -7px);
+}
+
+@media (max-width: 1100px) {
+  .menu-list {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    top: 8vh;
+    right: 0px;
+    background: var(--header-color);
+    transition: .5s;
+    z-index: 1000;
+    height: 0px;
+    visibility: hidden;
+    overflow-y: hidden;
+    font-size: 1.5rem;
+  }
+
+  .menu.active .menu-list {
+    height: 92svh;
+    visibility: visible;
+    overflow-y: auto;
+    padding-bottom: 8vh;
+    color: var(--white);
+  }
+
+  .menu-mobile-btn {
+    display: block;
   }
 
   .header-title {
@@ -145,58 +165,23 @@ html {
   .header-title-mobile {
     display: block;
   }
-
-  .nav-list {
-    position: absolute;
-    top: 8vh;
-    right: 0;
-    width: 100%;
-    height: 100vh;
-    background: var(--header-color);
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    transform: translateY(-100%);
-    transition: transform 0.3s ease-in;
-    text-transform: uppercase;
-  }
-
-  .nav-list li {
-    margin-left: 0;
-    opacity: 0;
-  }
-
-  .mobile-menu {
-    display: block;
-  }
 }
 
-.nav-list.active {
-  transform: translateY(0);
+
+#sobre {
+  scroll-margin-top: 15vh;
 }
 
-@keyframes navLinkFade {
-  from {
-    opacity: 0;
-    transform: translateX(50px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+#skills {
+  scroll-margin-top: 15vh;
 }
 
-.mobile-menu.active .line1 {
-  transform: rotate(-45deg) translate(-8px, 8px);
+#projetos {
+  scroll-margin-top: 13vh;
 }
 
-.mobile-menu.active .line2 {
-  opacity: 0;
-}
-
-.mobile-menu.active .line3 {
-  transform: rotate(45deg) translate(-5px, -7px);
+#contato {
+  scroll-margin-top: 15vh;
 }
 
 /******************************* dark-mode *************************************/
@@ -249,7 +234,7 @@ html {
 .home {
   display: flex;
   flex-direction: row;
-  margin: 15% 10%;
+  margin: 10%;
 }
 
 .hero-text {
@@ -356,6 +341,7 @@ html {
 .hero-img {
   width: 170px;
 }
+
 /******************************* scroll-button *************************************/
 
 .scrolldown {
@@ -711,64 +697,67 @@ html {
   opacity: 0.7;
 }
 
-.project-text-title {
-  margin: 2% 0;
+.portifolio-content {
+  border-radius: 20px;
+  box-shadow: 5px 10px 5px 5px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  margin-top: 5%;
+  display: flex;
+  background-color: #f3f3f3;
+
+  .dark-mode & {
+    background-color: var(--header-color);
+  }
 }
 
-.project-text-title-span {
+.portifolio-slide {
+  display: flex;
+  flex-direction: row;
+  padding: 8%;
+}
+
+.protifolio-img {
+  width: 40%;
+  border-radius: 20px;
+  transition: .5s;
+  margin-right: 10%;
+}
+
+.protifolio-data {
+  margin: 5% 0;
+  margin-left: 0;
+}
+
+.protifolio-img:hover {
+  transform: scale(1.05);
+}
+
+.protifolio-title {
+  font-size: 1.2rem;
+}
+
+.xpto-title {
   color: #dc143c;
 }
 
-.project-text-title-span-2 {
-  color: #102c57;
+.travels-title {
+  color: var(--color-secondary);
 
   .dark-mode & {
     color: var(--fourth-color);
   }
 }
 
-.project-content {
-  display: flex;
-  flex-direction: row;
+.appletica {
+  color: #004AAD;
+}
+
+.swiper-code-btn {
   text-align: center;
-  margin: 5% auto;
+  margin-top: 5%;
 }
 
-.project-content-1 {
-  display: flex;
-  flex-direction: row-reverse;
-  text-align: center;
-  margin: 5% auto;
-}
-
-.project-image {
-  width: 100%;
-  border-radius: 20px;
-  transition: .5s;
-}
-
-.project-image:hover {
-  transform: scale(1.1);
-}
-
-.project-text {
-  font-size: 1.2rem;
-  display: grid;
-  margin: auto;
-  text-align: justify;
-  margin-left: 5%;
-}
-
-.project-text-1 {
-  font-size: 1.2rem;
-  display: grid;
-  margin: auto;
-  text-align: justify;
-  margin-right: 5%;
-}
-
-
-.demo-btn {
+.button-demo {
   margin: 10px auto;
   border: 2px solid var(--header-color);
   padding: 10px;
@@ -783,7 +772,7 @@ html {
   }
 }
 
-.demo-btn:hover {
+.button-demo:hover {
   background-color: var(--header-color);
   color: var(--fifth-color);
 
@@ -794,49 +783,27 @@ html {
 }
 
 @media (max-width: 1080px) {
-
   .projects-container {
-    margin: 0 auto;
+    text-align: center;
   }
 
-  .project-content,
-  .project-content-1 {
+  .portifolio-content {
+    height: 60vh;
+    width: 70vw;
+  }
+
+  .portifolio-slide {
     flex-direction: column;
-    justify-content: center;
-    margin: 10%;
+    padding: 30% 15%;
   }
 
-  .project-image {
-    width: 80%;
-    margin: 30px;
-  }
-
-  .project-text {
-    margin: auto;
-  }
-
-  .project-text-1 {
-    margin: auto;
+  .protifolio-img {
+    width: 100%;
+    margin: 0 auto;
   }
 }
 
 /******************************* FIM project-page *************************************/
-
-/******************************* carrer-page *************************************/
-.carrer-container {
-  margin: 10%;
-  margin-top: 0;
-}
-
-.carrer-title {
-  font-size: 3rem;
-  font-weight: 900;
-  opacity: 0.7;
-}
-
-.carrer-subtitle {
-  opacity: 0.7;
-}
 
 /******************************* contact-page *************************************/
 .contact-container {
@@ -961,13 +928,7 @@ html {
 
 @media (max-width: 1080px) {
   .up-button {
-    padding: 5px;
-    right: 0.5rem;
-    bottom: 0.5rem;
-  }
-
-  .up-button-icon {
-    font-size: 1.2rem;
+    display: none;
   }
 }
 
