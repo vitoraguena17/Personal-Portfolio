@@ -1,48 +1,20 @@
 //*******************************************MOBILE_MENU************************************************\\
-class MobileNavbar {
-  constructor(mobileMenu, navList, navLinks) {
-    this.mobileMenu = document.querySelector(mobileMenu);
-    this.navList = document.querySelector(navList);
-    this.navLinks = document.querySelectorAll(navLinks);
-    this.activeClass = "active";
+const btnMobile = document.getElementById("menu-mobile-btn");
+const menuListBtns = document.querySelectorAll(".menu-list-btn");
 
-    this.handleClick = this.handleClick.bind(this);
-  }
-
-  animateLinks() {
-    this.navLinks.forEach((link, index) => {
-      link.style.animation ?
-        (link.style.animation = "") :
-        (link.style.animation = `navLinkFade 0.5s ease forwards ${
-            index / 7 + 0.3
-          }s`);
-    });
-  }
-
-  handleClick() {
-    this.navList.classList.toggle(this.activeClass);
-    this.mobileMenu.classList.toggle(this.activeClass);
-    this.animateLinks();
-  }
-
-  addClickEvent() {
-    this.mobileMenu.addEventListener("click", this.handleClick);
-  }
-
-  init() {
-    if (this.mobileMenu) {
-      this.addClickEvent();
-    }
-    return this;
-  }
+function toggleMenu(event) {
+    if (event.type == 'touchstart') event.preventDefault();
+    const nav = document.getElementById("menu");
+    nav.classList.toggle('active');
 }
 
-const mobileNavbar = new MobileNavbar(
-  ".mobile-menu",
-  ".nav-list",
-  ".nav-list li",
-);
-mobileNavbar.init();
+btnMobile.addEventListener('click', toggleMenu);
+btnMobile.addEventListener('touchstart', toggleMenu);
+
+menuListBtns.forEach(btn => {
+    btn.addEventListener('click', toggleMenu);
+});
+
 
 //*******************************************DARK_MODE_BTN************************************************\\
 
@@ -53,19 +25,34 @@ $checkbox.addEventListener('change', function () {
   $html.classList.toggle('dark-mode')
 })
 
-
 //*******************************************SCROLL_EFFECT************************************************\\
 
 const myObserver = new IntersectionObserver((entries) => {
-  entries.forEach((entry)=>{
-    if(entry.isIntersecting){
-    entry.target.classList.add('show')
-  }else {
-    entry.target.classList.remove('show')
-  }
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show')
+    } else {
+      entry.target.classList.remove('show')
+    }
   })
 })
 
 const elements = document.querySelectorAll('.hidden')
 
 elements.forEach((element) => myObserver.observe(element))
+
+//*******************************************SLIDER_PROJECT************************************************\\
+
+var swiper = new Swiper(".portifolio-content", {
+  slidesPerView: 1,
+  spaceBetween: 30,
+  loop: true,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+});

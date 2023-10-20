@@ -6,7 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vitor Aguena</title>
+
+  <!-- Icone de Aba -->
   <link rel="icon" href="./image/VA.ico">
+
   <!-- linkando CSS -->
   <link rel="stylesheet" href="./css/style.css" />
 
@@ -15,36 +18,40 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
 
-  <!-- font awesome -->
+  <!-- Linkando font awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
     integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <!-- font unicons -->
+  <!-- Linkando font unicons -->
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+
+  <!-- Linkando Swiper -->
+  <link rel="stylesheet" href="./css/unpkg.com_swiper@10.2.0_swiper-bundle.min.css">
 
 </head>
 
 <body>
-  <header class="header-page">
-    <nav class="nav-header" id="nav">
+  <header>
+    <nav class="menu" id="menu">
       <div class="header-menu">
         <a href="#top">
           <h1 class="header-title">VITOR <span class="title-span">AGUENA</span></h1>
+          <h1 class="header-title-mobile">V<span class="title-span-mobile">A</span></h1>
         </a>
-        <div class="mobile-menu">
+        <div class="menu-mobile-btn" id="menu-mobile-btn">
           <div class="line1"></div>
           <div class="line2"></div>
           <div class="line3"></div>
         </div>
       </div>
-      <ul class="nav-list">
-        <li><a href="#sobre">Sobre</a></li>
-        <li><a href="#skills">Habilidades</a></li>
-        <li><a href="#projetos">Projetos</a></li>
-        <li><a href="#carreira">Carreira</a></li>
-        <li><a href="#contato">Contato</a></li>
+      <ul class="menu-list">
+        <li><a class="menu-list-btn" href="#sobre">Sobre</a></li>
+        <li><a class="menu-list-btn" href="#skills">Habilidades</a></li>
+        <li><a class="menu-list-btn" href="#projetos">Projetos</a></li>
+        <li><a class="menu-list-btn" href="#contato">Contato</a></li>
       </ul>
+      
       <div class="menu-chk">
         <input type="checkbox" class="header-chk" id="chk">
         <label class="header-label" for="chk">
@@ -135,9 +142,9 @@
         <h2 class="skills-title">Habilidades</h2>
         <h4 class="skills-subtitle">Meu nível técnico</h4>
       </section>
-      <div class="box-content hidden">
+      <div class="box-content">
 
-        <div class="skills-box">
+        <div class="skills-box hidden">
           <p class="skills-box-title">HARDWARE <i class="uil uil-desktop-cloud-alt"></i></p>
           <p class="skills-box-text">Estudando sobre desde 2020, ampliando minhas habilidades práticas</p>
           <li>
@@ -186,39 +193,77 @@
         <h2 class="project-title">Projetos em Destaque</h2>
         <h4 class="project-subtitle">Meus trabalhos recentes</h4>
       </section>
-      <div class="project-content">
-        <figure class="project-gallery hidden">
-          <img class="project-image" src="./image/PROJETO_XPTO.jpg" alt="PROJETO XPTO">
-        </figure>
-        <div class="project-text">
-          <h3 class="project-text-title">Projeto <span class="project-text-title-span">XPTO</span></h3>
-          <p>
-            Este projeto foi criado exclusivamente usando HTML e CSS, demonstrando a capacidade de desenvolver uma
-            interface web completa e interativa sem a necessidade de linguagens de programação mais avançadas. É um
-            exemplo de design elegante e funcional baseado apenas em tecnologias front-end simples.
-          </p>
-          <a class="demo-btn" href="https://vitoraguena17.github.io/XPTO" target="_blank">Demo <i class="fa-solid fa-arrow-right"></i></a>
+      <div class="portifolio-content swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="portifolio-content-grid swiper-slide">
+              <div class="portifolio-slide">
+                <img src="./image/PROJETO_XPTO.jpg" class="protifolio-img" alt="Portifólio-IMG">
+                <div class="protifolio-data">
+                  <h3 class="portifolio-title">Projeto <span class="xpto-title">XPTO</span></h3>
+                  <p class="protifolio-description">
+                    Este projeto foi desenvolvido exclusivamente com HTML e CSS para criar uma interface web elegante e
+                    funcional</p><br>
+                  <div class="swiper-code-btn">
+                    <a href="https://vitoraguena17.github.io/XPTO" class="button-demo" target="_blank">
+                      Demo
+                      <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="portifolio-content-grid swiper-slide">
+              <div class="portifolio-slide">
+                <img src="./image/SITE_DE_VIAJENS.jpg" class="protifolio-img" alt="Portifólio-IMG">
+                <div class="protifolio-data">
+                  <h3 class="portifolio-title">Site de <span class="travels-title">Destinos</span></h3>
+                  <p class="protifolio-description">
+                    Este projeto foi desenvolvido exclusivamente com HTML e CSS para criar uma interface web elegante e
+                    funcional</p><br>
+                  <div class="swiper-code-btn">
+                    <a href="https://vitoraguena17.github.io/Destinos" class="button-demo" target="_blank">
+                      Demo
+                      <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="portifolio-content-grid swiper-slide">
+              <div class="portifolio-slide">
+                <img src="./image/PROJETO_APPLETICA.png" class="protifolio-img" alt="Portifólio-IMG">
+                <div class="protifolio-data">
+                  <h3 class="portifolio-title">Projeto <span class="appletica">APPLETICA</span></h3>
+                  <p class="protifolio-description">
+                    Este projeto foi desenvolvido exclusivamente com VB.NET para criar uma interface elegante e
+                    funcional para qualquer atlética</p><br>
+                  <div class="swiper-code-btn">
+                    <a href="https://github.com/vitoraguena17/Appletica.git" class="button-demo" target="_blank">
+                      Code
+                      <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="project-content-1">
-        <figure class="project-gallery hidden">
-          <img class="project-image" src="./image/SITE_DE_VIAJENS.jpg" alt="">
-        </figure>
-        <div class="project-text-1">
-          <h3 class="project-text-title">Site de <span class="project-text-title-span-2">Destinos</span></h3>
-          <p>Este projeto foi criado exclusivamente usando HTML e CSS, demonstrando a capacidade de desenvolver uma
-            interface web completa e interativa sem a necessidade de linguagens de programação mais avançadas. É um
-            exemplo de design elegante e funcional baseado apenas em tecnologias front-end simples.</p>
-          <a class="demo-btn" href="https://vitoraguena17.github.io/Destinos" target="_blank">Demo <i class="fa-solid fa-arrow-right"></i></a>
+        <!-- Arrows -->
+        <div class="swiper-button-next">
+
         </div>
+        <div class="swiper-button-prev">
+
+        </div>
+        <!-- Pagination -->
+        <div class="swiper-pagination"></div>
       </div>
-    </div>
-    <!-------------------------------------------------- CARREIRA ----------------------------------------------->
-    <div class="carrer-container" id="carreira">
-      <section class="about-header hidden">
-        <h2 class="carrer-title">Carreira</h2>
-        <h3 class="carrer-subtitle">Minha trajetória estudantil</h3>
-      </section>
     </div>
     <!-------------------------------------------------- CONTATO ----------------------------------------------->
     <div class="contact-container hidden" id="contato">
@@ -237,6 +282,7 @@
         <button class="contact-form-button" type="submit" data-button>Enviar</button>
       </form>
     </div>
+    <a class="up-button hidden" id="scroll-up" href="#top"><i class="fa-solid fa-arrow-up up-button-icon"></i></a>
   </main>
   <!-------------------------------------------------- RODAPE ----------------------------------------------->
   <footer class="footer">
@@ -254,7 +300,9 @@
     </div>
   </footer>
 
+  <script src="./js/unpkg.com_swiper@10.2.0_swiper-bundle.min.js"></script>
   <script src="./js/script.js"></script>
+
 </body>
 
 </html>
