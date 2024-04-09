@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vitor Aguena</title>
+
+  <!-- Icone de Aba -->
+  <link rel="icon" href="./image/VA.ico">
+
+  <!-- linkando CSS -->
+  <link rel="stylesheet" href="./css/style.css" />
+
+  <!-- Linkando Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+
+  <!-- Linkando font awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Linkando font unicons -->
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+
+  <!-- Linkando Swiper -->
+  <link rel="stylesheet" href="./css/unpkg.com_swiper@10.2.0_swiper-bundle.min.css">
+
+</head>
+
+<body>
+  <header>
+    <nav class="menu" id="menu">
+      <div class="header-menu">
+        <a href="#top">
+          <h1 class="header-title">VITOR <span class="title-span">AGUENA</span></h1>
+          <h1 class="header-title-mobile">V<span class="title-span-mobile">A</span></h1>
+        </a>
+        <div class="menu-mobile-btn" id="menu-mobile-btn">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
+      </div>
+      <ul class="menu-list">
+        <li><a class="menu-list-btn" href="#sobre">Sobre</a></li>
+        <li><a class="menu-list-btn" href="#skills">Habilidades</a></li>
+        <li><a class="menu-list-btn" href="#projetos">Projetos</a></li>
+        <li><a class="menu-list-btn" href="#contato">Contato</a></li>
+      </ul>
+      
+      <div class="menu-chk">
+        <input type="checkbox" class="header-chk" id="chk">
+        <label class="header-label" for="chk">
+          <i class="fa-solid fa-moon"></i>
+          <i class="fa-solid fa-sun"></i>
+          <div class="header-ball"></div>
+        </label>
+      </div>
+    </nav>
+  </header>
+  <!-------------------------------------------------- HOME ----------------------------------------------->
+  <main class="hero">
+    <div class="home hidden">
+      <div class="home-links hidden">
+        <a href="https://github.com/vitoraguena17" target="_blank"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/vitor-matos-matsumoto-aguena-019179269/" target="_blank"><i
+            class="fa-brands fa-linkedin"></i></a>
+        <a href="https://api.whatsapp.com/send?phone=+5511965265401&text=Ol%C3%A1%2C+vim+pelo+seu+Portfolio+%F0%9F%98%81%21"
+          target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="https://www.instagram.com/vitor__aguena/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+      </div>
+      <div class="hero-text">
+        <h1 class="-home-title">Olá, eu sou o Vitor </h1>
+        <h3 class="home-subtitle">Desenvolvedor e Analista de Sistemas</h3>
+        <p class="home-description"> Entusiasta da Tecnologia da Informação com foco em Análise e Desenvolvimento de
+          Sistemas, apaixonado por
+          Hardware e aprendendo constantemente sobre programação</p>
+        <div class="home-contact"><a href="#contato" class="home-btn">Contate-me</a></div>
+        <div class="scrolldown">
+          <a href="#sobre">
+            <span></span>
+            <span></span>
+            <span></span>
+          </a>
+        </div>
+      </div>
+      <div class="home-img">
+        <svg class="gallery" viewBox="0 0 200 187" xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink">
+          <mask id="mask0" mask-type="alpha">
+            <path d="M190.312 36.4879C206.582 62.1187 201.309 102.826 182.328 134.186C163.346 165.547 
+              130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403 129.362C2.45775 
+              97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 -0.149132 97.9666 
+              0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z" />
+          </mask>
+          <g mask="url(#mask0)">
+            <path d="M190.312 36.4879C206.582 62.1187 201.309 102.826 182.328 134.186C163.346 
+              165.547 130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403 
+              129.362C2.45775 97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 
+              -0.149132 97.9666 0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z" />
+            <image class="hero-img" href="image/eu.png" x='8' />
+          </g>
+        </svg>
+      </div>
+    </div>
+    <!-------------------------------------------------- SOBRE ----------------------------------------------->
+    <div class="about-container hidden" id="sobre">
+      <section class="about-header">
+        <h2 class="about-title">Sobre Mim</h2>
+        <h4 class="about-subtitle">Apresentação Pessoal</h4>
+      </section>
+      <div class="about-content">
+        <figure class="gallery-about hidden">
+          <img class="about-img" src="./image/eu_2.png" x='8' alt="Foto Pessoal">
+        </figure>
+        <div class="description-about">
+          <p class="about-text">
+            Sou um estudante dedicado, atualmente cursando Análise e Desenvolvimento de Sistemas. Possuo sólidos
+            conhecimentos na área de hardware de computador e estou comprometido com o estudo constante de programação
+            tanto
+            no desenvolvimento back-end quanto front-end. Minha paixão pela tecnologia e busca incessante por
+            aprimoramento
+            refletem meu compromisso em me destacar nesse campo.</p>
+          <div class="cards">
+            <i class="fa-solid fa-graduation-cap card-icon hidden"></i>
+            <i class="fa-solid fa-microchip card-icon hidden"></i>
+            <i class="fa-solid fa-code card-icon hidden"></i>
+          </div>
+        </div>
+      </div>
+      <div class="about-cv"><a class="cv-btn" href="./docs/Currículo Vitor Aguena .pdf" download=""
+          target="_blank"><span>Download
+            CV</span> <i class="fa-regular fa-circle-down"></i></a></div>
+    </div>
+    <!-------------------------------------------------- HABILIDADES ----------------------------------------------->
+    <div class="skills-container hidden" id="skills">
+      <section class="about-header">
+        <h2 class="skills-title">Habilidades</h2>
+        <h4 class="skills-subtitle">Meu nível técnico</h4>
+      </section>
+      <div class="box-content">
+
+        <div class="skills-box hidden">
+          <p class="skills-box-title">HARDWARE <i class="uil uil-desktop-cloud-alt"></i></p>
+          <p class="skills-box-text">Estudando sobre desde 2020, ampliando minhas habilidades práticas</p>
+          <li>
+            <p class="skills-content">Montagem</p>
+            <span class="skill-bar"><span class="montagem"></span></span>
+          </li>
+          <li>
+            <p class="skills-content">Manutenção</p>
+            <span class="skill-bar"><span class="manutencao"></span></span>
+          </li>
+          <li>
+            <p class="skills-content">Identificação de falhas</p>
+            <span class="skill-bar"><span class="falhas"></span></span>
+          </li>
+          <li>
+            <p class="skills-content">Diagnóstico de peças</p>
+            <span class="skill-bar"><span class="pecas"></span></span>
+          </li>
+        </div>
+
+        <div class="skills-box">
+          <p class="skills-box-title">SOFTWARE <i class="uil uil-brackets-curly"></i></p>
+          <p class="skills-box-text">Tendo contato prático e estudantil desde 2022</p>
+          <li>
+            <p class="skills-content">HTML</p>
+            <span class="skill-bar"><span class="html"></span></span>
+          </li>
+          <li>
+            <p class="skills-content">CSS</p>
+            <span class="skill-bar"><span class="css"></span></span>
+          </li>
+          <li>
+            <p class="skills-content">C++</p>
+            <span class="skill-bar"><span class="c"></span></span>
+          </li>
+          <li>
+            <p class="skills-content">JAVA SCRIPT</p>
+            <span class="skill-bar"><span class="js"></span></span>
+          </li>
+          <li>
+            <p class="skills-content">JAVA</p>
+            <span class="skill-bar"><span class="java"></span></span>
+          </li>
+        </div>
+      </div>
+    </div>
+    <!-------------------------------------------------- PROJETOS ----------------------------------------------->
+    <div class="projects-container hidden" id="projetos">
+      <section class="about-header">
+        <h2 class="project-title">Projetos em Destaque</h2>
+        <h4 class="project-subtitle">Meus trabalhos recentes</h4>
+      </section>
+      <div class="portifolio-content swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="portifolio-content-grid swiper-slide">
+              <div class="portifolio-slide">
+                <img src="./image/PROJETO_XPTO.jpg" class="protifolio-img" alt="Portifólio-IMG">
+                <div class="protifolio-data">
+                  <h3 class="portifolio-title">Projeto <span class="xpto-title">XPTO</span></h3>
+                  <p class="protifolio-description">
+                    Este projeto foi desenvolvido exclusivamente com HTML e CSS para criar uma interface web elegante e
+                    funcional</p><br>
+                  <div class="swiper-code-btn">
+                    <a href="https://vitoraguena17.github.io/XPTO" class="button-demo" target="_blank">
+                      Demo
+                      <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="portifolio-content-grid swiper-slide">
+              <div class="portifolio-slide">
+                <img src="./image/SITE_DE_VIAJENS.jpg" class="protifolio-img" alt="Portifólio-IMG">
+                <div class="protifolio-data">
+                  <h3 class="portifolio-title">Site de <span class="travels-title">Destinos</span></h3>
+                  <p class="protifolio-description">
+                    Este projeto foi desenvolvido exclusivamente com HTML e CSS para criar uma interface web elegante e
+                    funcional</p><br>
+                  <div class="swiper-code-btn">
+                    <a href="https://vitoraguena17.github.io/Destinos" class="button-demo" target="_blank">
+                      Demo
+                      <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="portifolio-content-grid swiper-slide">
+              <div class="portifolio-slide">
+                <img src="./image/PROJETO_APPLETICA.png" class="protifolio-img" alt="Portifólio-IMG">
+                <div class="protifolio-data">
+                  <h3 class="portifolio-title">Projeto <span class="appletica">APPLETICA</span></h3>
+                  <p class="protifolio-description">
+                    Este projeto foi desenvolvido exclusivamente com VB.NET para criar uma interface elegante e
+                    funcional para qualquer atlética</p><br>
+                  <div class="swiper-code-btn">
+                    <a href="https://github.com/vitoraguena17/Appletica.git" class="button-demo" target="_blank">
+                      Code
+                      <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Arrows -->
+        <div class="swiper-button-next">
+
+        </div>
+        <div class="swiper-button-prev">
+
+        </div>
+        <!-- Pagination -->
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+    <!-------------------------------------------------- CONTATO ----------------------------------------------->
+    <div class="contact-container hidden" id="contato">
+      <section class="about-header">
+        <h2 class="contact-title">Contato</h2>
+      </section>
+      <form class="contact-form hidden" action="https://formsubmit.co/d7d5478dfa3667689d40423a890b5a23" method="POST">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_subject" value="New submission from Portifólio!">
+        <label class="contact-form-label" for="nome">Nome</label>
+        <input class="contact-form-input" type="text" name="nome" required />
+        <label class="contact-form-label" for="email">E-mail</label>
+        <input class="contact-form-input" type="email" name="email" required />
+        <label class="contact-form-label" for="mensagem">Mensagem</label>
+        <textarea class="contact-form-textarea" name="mensagem" required></textarea>
+        <button class="contact-form-button" type="submit" data-button>Enviar</button>
+      </form>
+    </div>
+    <a class="up-button hidden" id="scroll-up" href="#top"><i class="fa-solid fa-arrow-up up-button-icon"></i></a>
+  </main>
+  <!-------------------------------------------------- RODAPE ----------------------------------------------->
+  <footer class="footer">
+    <div class="footer-icons">
+      <a href="https://github.com/vitoraguena17" target="_blank"><i class="uil uil-github"></i></a>
+      <a href="https://www.linkedin.com/in/vitor-matos-matsumoto-aguena-019179269/" target="_blank"><i
+          class="uil uil-linkedin"></i></a>
+      <a href="https://api.whatsapp.com/send?phone=+5511965265401&text=Ol%C3%A1%2C+vim+pelo+seu+Portfolio+%F0%9F%98%81%21"
+        target="_blank"><i class="uil uil-whatsapp"></i></a>
+      <a href="https://www.instagram.com/vitor__aguena/" target="_blank"><i class="uil uil-instagram"></i></a>
+    </div>
+    <div class="footer-bottom">
+      <p>Copyright &copy;2023</p>
+      <p>Desenvolvido por Vitor Aguena</p>
+    </div>
+  </footer>
+
+  <script src="./js/unpkg.com_swiper@10.2.0_swiper-bundle.min.js"></script>
+  <script src="./js/script.js"></script>
+
+</body>
+
+</html>
