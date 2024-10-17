@@ -1,4 +1,6 @@
 //*******************************************MOBILE_MENU************************************************\\
+//declarando as variáveis e puxando elas do html por id
+//declarei como const pq nao pretendo mudar o nome dela
 const btnMobile = document.getElementById("menu-mobile-btn");
 const menuListBtns = document.querySelectorAll(".menu-list-btn");
 
@@ -7,6 +9,7 @@ function toggleMenu(event) {
     const nav = document.getElementById("menu");
     nav.classList.toggle('active');
 }
+//function sao codigos que podemos usar mais de uma vez
 
 btnMobile.addEventListener('click', toggleMenu);
 btnMobile.addEventListener('touchstart', toggleMenu);
@@ -14,7 +17,6 @@ btnMobile.addEventListener('touchstart', toggleMenu);
 menuListBtns.forEach(btn => {
     btn.addEventListener('click', toggleMenu);
 });
-
 
 //*******************************************DARK_MODE_BTN************************************************\\
 

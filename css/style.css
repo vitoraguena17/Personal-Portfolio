@@ -632,35 +632,39 @@ header {
 }
 
 .montagem {
-  width: 70%;
+  width: 90%;
 }
 
 .manutencao {
-  width: 55%;
+  width: 80%;
 }
 
 .falhas {
-  width: 50%;
-}
-
-.pecas {
-  width: 45%;
-}
-
-.html {
   width: 60%;
 }
 
-.css {
+.pecas {
   width: 50%;
+}
+
+.html {
+  width: 85%;
+}
+
+.css {
+  width: 80%;
 }
 
 .c {
   width: 60%;
 }
 
+.js {
+  width: 50%;
+}
+
 .java {
-  width: 20%;
+  width: 50%;
 }
 
 @media (max-width: 990px) {
@@ -740,12 +744,8 @@ header {
   color: #dc143c;
 }
 
-.travels-title {
-  color: var(--color-secondary);
-
-  .dark-mode & {
-    color: var(--fourth-color);
-  }
+.austral-title {
+  color: #634832;
 }
 
 .appletica {
@@ -905,32 +905,6 @@ header {
 /******************************* FIM contact-page *************************************/
 
 /******************************* FIM hero-page *************************************/
-
-.up-button {
-  position: fixed;
-  right: 2rem;
-  bottom: 2rem;
-  background-color: var(--fourth-color);
-  opacity: .8;
-  padding: 10px;
-  border-radius: .4rem;
-  transition: .5s;
-}
-
-.up-button:hover {
-  transform: scale(1.1);
-}
-
-.up-button-icon {
-  font-size: 1.5rem;
-  color: var(--white);
-}
-
-@media (max-width: 1080px) {
-  .up-button {
-    display: none;
-  }
-}
 
 /******************************* FOOTER *************************************/
 .footer {
